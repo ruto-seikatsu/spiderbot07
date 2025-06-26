@@ -19,10 +19,17 @@
       padding-bottom: 40px;
     }
 
+    /* Animación para el logo */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     .logo {
       max-width: 300px;
       margin: 30px auto;
       display: block;
+      animation: fadeIn 1.5s ease-out;
     }
 
     h1, h2, p {
@@ -34,13 +41,17 @@
       padding: 10px;
       margin: 20px auto;
       width: 80%;
+      max-width: 600px;
       background-color: #111;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
       border-radius: 10px;
     }
 
-    img.img-fluid {
+    .image-frame img {
+      width: 100%;
+      height: auto;
       border-radius: 10px;
+      display: block;
     }
   </style>
 </head>
@@ -58,18 +69,14 @@
     <p>Proyecto Académico</p>
 
     <!-- Imagen 1 -->
-    <picture>
-      <div class="image-frame">
-        <img src="assets/Spiderbot01.png" class="img-fluid" alt="Spiderbot Imagen 1">
-      </div>
-    </picture>
+    <div class="image-frame">
+      <img src="assets/Spiderbot01.png" class="img-fluid" alt="Spiderbot Imagen 1">
+    </div>
 
     <!-- Imagen 2 -->
-    <picture>
-      <div class="image-frame">
-        <img src="assets/Spiderbot02.png" class="img-fluid" alt="Spiderbot Imagen 2">
-      </div>
-    </picture>
+    <div class="image-frame">
+      <img src="assets/Spiderbot02.png" class="img-fluid" alt="Spiderbot Imagen 2">
+    </div>
   </div>
 
   <!-- Bootstrap JS -->
