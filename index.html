@@ -28,9 +28,17 @@
       animation: fadeIn 2s ease-in-out;
     }
 
-    h1, h2, p {
+    h1, h2, h3, p {
       margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease-in-out forwards;
     }
+
+    h1 { animation-delay: 0.2s; }
+    h2 { animation-delay: 0.4s; }
+    h3 { animation-delay: 0.6s; }
+    p  { animation-delay: 0.8s; }
 
     .image-frame {
       border: 2px solid white;
@@ -48,12 +56,11 @@
       animation: fadeUp 1s ease-in-out forwards;
     }
 
-    /* Animación con delay para secuencia */
-    .image-frame:nth-of-type(1) { animation-delay: 0.5s; }
-    .image-frame:nth-of-type(2) { animation-delay: 1s; }
-    .image-frame:nth-of-type(3) { animation-delay: 1.5s; }
-    .image-frame:nth-of-type(4) { animation-delay: 2s; }
-    .image-frame:nth-of-type(5) { animation-delay: 2.5s; }
+    .image-frame:nth-of-type(1) { animation-delay: 1.0s; }
+    .image-frame:nth-of-type(2) { animation-delay: 1.3s; }
+    .image-frame:nth-of-type(3) { animation-delay: 1.6s; }
+    .image-frame:nth-of-type(4) { animation-delay: 1.9s; }
+    .image-frame:nth-of-type(5) { animation-delay: 2.2s; }
 
     .image-frame:hover {
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
@@ -67,7 +74,6 @@
       display: block;
     }
 
-    /* Botón Volver arriba */
     #backToTop {
       position: fixed;
       bottom: 20px;
@@ -115,7 +121,7 @@
   <!-- CONTENIDO -->
   <div class="container">
     <h1>"Connie" (SpiderBot 07)</h1>
-    <h2>⎣ Inspirado en NieR Automata ⌝</h2>
+    <h2>⃝ Inspirado en NieR Automata ⃝</h2>
     <h3>Creado por Rutito</h3> 
     <p>Proyecto Académico</p>
 
