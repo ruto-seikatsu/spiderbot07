@@ -5,20 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spiderbot 07</title>
 
-  <!-- Google Font: Parecida a ITC Benguiat -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    /* Fondo animado */
     body {
-      background-color: #000;
+      background: linear-gradient(-45deg, #000000, #0a0a0a, #1a1a1a, #000000);
+      background-size: 400% 400%;
+      animation: gradientMove 20s ease infinite;
       color: #fff;
       font-family: 'EB Garamond', serif;
       text-align: center;
       padding-bottom: 60px;
-      animation: nightFade 2s ease-in-out;
+      cursor: crosshair;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Cursor personalizado */
+    * {
+      cursor: crosshair;
     }
 
     .logo {
@@ -35,10 +49,53 @@
       animation: fadeUp 1s ease-in-out forwards;
     }
 
-    h1 { animation-delay: 0.2s; }
+    h1 {
+      animation-delay: 0.2s;
+      font-size: 2.5rem;
+      position: relative;
+    }
+
     h2 { animation-delay: 0.4s; }
     h3 { animation-delay: 0.6s; }
     p  { animation-delay: 0.8s; }
+
+    /* Efecto glitch */
+    h1::before,
+    h1::after {
+      content: attr(data-glitch);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      color: #f0f0f0;
+      clip: rect(0, 900px, 0, 0);
+    }
+
+    h1::before {
+      animation: glitchTop 2s infinite linear alternate-reverse;
+      color: #a0f;
+    }
+
+    h1::after {
+      animation: glitchBottom 1.5s infinite linear alternate-reverse;
+      color: #0ff;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      5% { clip: rect(0, 9999px, 5px, 0); }
+      10% { clip: rect(0, 9999px, 2px, 0); }
+      15% { clip: rect(0, 9999px, 6px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      5% { clip: rect(6px, 9999px, 10px, 0); }
+      10% { clip: rect(4px, 9999px, 9px, 0); }
+      15% { clip: rect(7px, 9999px, 12px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
 
     .image-frame {
       border: 2px solid white;
@@ -56,7 +113,7 @@
       animation: fadeUp 1s ease-in-out forwards;
     }
 
-    .image-frame:nth-of-type(1) { animation-delay: 1.0s; }
+    .image-frame:nth-of-type(1) { animation-delay: 1s; }
     .image-frame:nth-of-type(2) { animation-delay: 1.3s; }
     .image-frame:nth-of-type(3) { animation-delay: 1.6s; }
     .image-frame:nth-of-type(4) { animation-delay: 1.9s; }
@@ -94,7 +151,7 @@
       transform: scale(1.05);
     }
 
-    /* Animaciones */
+    /* Animaciones base */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -103,11 +160,6 @@
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(40px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes nightFade {
-      from { background-color: #111; }
-      to   { background-color: #000; }
     }
   </style>
 </head>
@@ -120,7 +172,7 @@
 
   <!-- CONTENIDO -->
   <div class="container">
-    <h1>"Connie" (SpiderBot 07)</h1>
+    <h1 data-glitch='"Connie" (SpiderBot 07)'>"Connie" (SpiderBot 07)</h1>
     <h2>⸺ Inspirado en NieR Automata ⸺</h2>
     <h3>Creado por Rutito</h3> 
     <p>Proyecto Académico</p>
